@@ -1,5 +1,4 @@
-/* eslint-disable no-useless-catch */
-import conf from "../conf/config";
+import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
 
 export class AuthService {
@@ -51,15 +50,15 @@ export class AuthService {
     return null;
   }
 
-  async logout (){
+  async logout() {
     try {
-        return await this.account.deleteSessions();
+      return await this.account.deleteSessions();
     } catch (error) {
-        console.log("Appwrite service :: logout :: error", error);
+      console.log("Appwrite service :: logout :: error", error);
     }
   }
 }
 
 const authService = new AuthService();
 
-export default AuthService;
+export default authService;
